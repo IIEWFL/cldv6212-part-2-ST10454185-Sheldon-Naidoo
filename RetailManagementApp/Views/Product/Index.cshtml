@@ -1,0 +1,66 @@
+﻿@model IEnumerable<RetailManagementApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div style="max-width: 1000px; margin: 32px auto; padding: 32px; background-color: #f7f9fb; min-height: 100vh;">
+    <div style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); overflow: hidden;">
+        <div style="padding: 32px;">
+            <h1 style="font-size: 28px; font-weight: bold; color: #333333; margin-bottom: 24px; text-align: center;">Products</h1>
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+                <a asp-action="Create" style="display: block; width: 100%; margin-bottom: 16px; background-color: #4c8bf5; color: #ffffff; font-weight: bold; padding: 12px 24px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); text-align: center; text-decoration: none; transition: transform 0.3s ease, background-color 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'; this.style.backgroundColor='#3e7ae1'" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#4c8bf5'">
+                    Create New Product
+                </a>
+                <a asp-controller="Order" asp-action="OrderList" style="display: block; width: 100%; background-color: #3cb46a; color: #ffffff; font-weight: bold; padding: 12px 24px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); text-align: center; text-decoration: none; transition: transform 0.3s ease, background-color 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'; this.style.backgroundColor='#32965a'" onmouseout="this.style.transform='scale(1)'; this.style.backgroundColor='#3cb46a'">
+                    View Confirmed Orders
+                </a>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; background-color: #ffffff; border-collapse: collapse; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);">
+                    <thead style="background-color: #f0f4f8;">
+                        <tr>
+                            <th style="padding: 16px; text-align: left; font-weight: 600; font-size: 14px; color: #4a5568; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;">
+                                @Html.DisplayNameFor(model => model.ProductName)
+                            </th>
+                            <th style="padding: 16px; text-align: left; font-weight: 600; font-size: 14px; color: #4a5568; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;">
+                                @Html.DisplayNameFor(model => model.Price)
+                            </th>
+                            <th style="padding: 16px; text-align: left; font-weight: 600; font-size: 14px; color: #4a5568; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;">
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th style="padding: 16px; text-align: left; font-weight: 600; font-size: 14px; color: #4a5568; text-transform: uppercase; border-bottom: 1px solid #e2e8f0;">
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr style="border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#f7fafc'" onmouseout="this.style.backgroundColor='transparent'">
+                                <td style="padding: 16px; font-size: 14px; color: #2d3748;">
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td style="padding: 16px; font-size: 14px; color: #2d3748;">
+                                    @($"R{item.Price}")
+                                </td>
+                                <td style="padding: 16px; font-size: 14px; color: #2d3748;">
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td style="padding: 16px; font-size: 14px;">
+                                    <div style="display: flex; gap: 8px;">
+                                        <a asp-action="Edit" asp-route-partitionKey="@item.PartitionKey" asp-route-rowKey="@item.RowKey" style="display: inline-block; padding: 8px 16px; background-color: #4c8bf5; color: #ffffff; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#3e7ae1'" onmouseout="this.style.backgroundColor='#4c8bf5'">Edit</a>
+                                        <a asp-action="Details" asp-route-partitionKey="@item.PartitionKey" asp-route-rowKey="@item.RowKey" style="display: inline-block; padding: 8px 16px; background-color: #718096; color: #ffffff; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#5c6a7a'" onmouseout="this.style.backgroundColor='#718096'">Details</a>
+                                        <a asp-action="Delete" asp-route-partitionKey="@item.PartitionKey" asp-route-rowKey="@item.RowKey" style="display: inline-block; padding: 8px 16px; background-color: #e53e3e; color: #ffffff; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#c53030'" onmouseout="this.style.backgroundColor='#e53e3e'">Delete</a>
+                                        <a asp-controller="Order" asp-action="Index" asp-route-partitionKey="@item.PartitionKey" asp-route-rowKey="@item.RowKey" style="display: inline-block; padding: 8px 16px; background-color: #3cb46a; color: #ffffff; text-decoration: none; border-radius: 6px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#32965a'" onmouseout="this.style.backgroundColor='#3cb46a'">Order</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

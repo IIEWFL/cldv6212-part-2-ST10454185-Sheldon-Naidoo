@@ -1,0 +1,112 @@
+﻿@model RetailManagementApp.Models.Order
+
+@{
+    ViewData["Title"] = "Delete Order";
+}
+
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f7fafc;
+    }
+</style>
+
+<div class="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-red-600 tracking-tight flex items-center justify-center gap-3">
+            <!-- Icon for deletion -->
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            @ViewData["Title"]
+        </h1>
+    </header>
+
+    <!-- Critical Warning Block (High Contrast) -->
+    <div class="bg-red-50 border-2 border-red-400 text-red-800 p-6 mb-10 rounded-xl shadow-lg" role="alert">
+        <p class="font-extrabold text-xl mb-3 flex items-center gap-2">
+            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.503-1.658 1.732-3l-6.928-12c-.77-1.342-2.736-1.342-3.504 0l-6.928 12c-.77 1.342.192 3 1.732 3z" /></svg>
+            Confirmation Required
+        </p>
+        <p class="text-lg">
+            You are about to **permanently delete** this order. This will remove the transaction record and the related **product image from cloud storage**. This action cannot be undone.
+        </p>
+    </div>
+
+    <!-- Order Details Card -->
+    <div class="bg-white shadow-2xl rounded-2xl p-8 space-y-6 border border-gray-100">
+        <h3 class="text-2xl font-semibold border-b pb-4 text-gray-800 flex items-center gap-2">
+            <svg class="w-5 h-5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+            Order Summary
+        </h3>
+
+        <dl class="space-y-4">
+            <!-- Customer Name -->
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-3">
+                <dt class="w-1/3 text-sm font-medium text-gray-500">Customer Name</dt>
+                <dd class="w-2/3 text-lg font-medium text-gray-900 mt-1 sm:mt-0">@Html.DisplayFor(model => model.CustomerName)</dd>
+            </div>
+
+            <!-- Product Name -->
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-3">
+                <dt class="w-1/3 text-sm font-medium text-gray-500">Product Name</dt>
+                <dd class="w-2/3 text-lg font-medium text-gray-900 mt-1 sm:mt-0">@Html.DisplayFor(model => model.ProductName)</dd>
+            </div>
+
+            <!-- Total Amount -->
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-gray-100 pb-3">
+                <dt class="w-1/3 text-sm font-medium text-gray-500">Total Amount</dt>
+                <dd class="w-2/3 text-xl font-bold text-green-600 mt-1 sm:mt-0">$@Html.DisplayFor(model => model.TotalAmount)</dd>
+            </div>
+
+            <!-- Product Photo URL -->
+            <div class="flex flex-col sm:flex-row sm:items-center">
+                <dt class="w-1/3 text-sm font-medium text-gray-500">Photo Access</dt>
+                <dd class="w-2/3 text-lg font-medium mt-1 sm:mt-0">
+                    @if (!string.IsNullOrEmpty(Model.ProductPhotoUrl))
+                    {
+                        <a href="@Model.ProductPhotoUrl" target="_blank" class="text-blue-600 hover:text-blue-800 flex items-center gap-1">
+                            View Attached Image
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="text-gray-500 italic">No Photo Attached</span>
+                    }
+                </dd>
+            </div>
+
+            <!-- Blob Name -->
+            <div class="pt-4 border-t border-gray-100">
+                <dt class="text-xs font-medium text-gray-400">Blob File Name (for cleanup)</dt>
+                <dd class="text-xs font-mono text-gray-500">@Html.DisplayFor(model => model.ProductPhotoBlobName)</dd>
+            </div>
+        </dl>
+    </div>
+
+    <!-- Delete Action Form -->
+    <form asp-action="Delete" method="post" class="mt-10 flex flex-col sm:flex-row-reverse justify-end gap-4">
+        @Html.AntiForgeryToken()
+
+        <!-- Hidden Keys for Submission -->
+        <input type="hidden" asp-for="PartitionKey" />
+        <input type="hidden" asp-for="RowKey" />
+        <input type="hidden" asp-for="ProductPhotoBlobName" />
+
+        <!-- Confirm Deletion Button -->
+        <button type="submit" class="inline-flex justify-center w-full sm:w-auto py-3 px-8 border border-transparent text-lg font-bold rounded-xl text-white bg-red-600 shadow-xl shadow-red-500/50 hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-500 focus:ring-opacity-50 transition duration-300 transform hover:scale-[1.02] active:scale-100">
+            <svg class="h-6 w-6 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+            I Understand, Delete This Order
+        </button>
+
+        <!-- Cancel Button -->
+        <a asp-action="Index" class="inline-flex items-center justify-center w-full sm:w-auto py-3 px-8 border border-gray-300 text-lg font-medium rounded-xl text-gray-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150">
+            Cancel
+        </a>
+    </form>
+</div>
+

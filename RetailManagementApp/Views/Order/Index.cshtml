@@ -1,0 +1,128 @@
+﻿@model IEnumerable<RetailManagementApp.Models.Order>
+
+@{
+    ViewData["Title"] = "Order Management Dashboard";
+}
+
+<style>
+    .card {
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+    }
+
+    .btn-action {
+        padding: 6px 12px;
+        border-radius: 8px;
+        margin-right: 5px;
+    }
+
+    .table-order th {
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #e9ecef;
+    }
+
+    .table-order img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+</style>
+
+<div class="container-fluid py-4">
+    <h1 class="display-4 mb-4">@ViewData["Title"]</h1>
+
+    @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>API Error!</strong> @ViewBag.ErrorMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Warning!</strong> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="d-flex justify-content-between mb-3">
+        <a asp-action="Create" class="btn btn-primary btn-lg">
+            <i class="bi bi-plus-circle-fill"></i> Place New Order
+        </a>
+        <div class="d-flex">
+            <a asp-action="Log" class="btn btn-secondary btn-lg me-2">
+                <i class="bi bi-journal-text"></i> View Transaction Log
+            </a>
+            <a asp-action="ExportLog" class="btn btn-info btn-lg">
+                <i class="bi bi-download"></i> Export Reports
+            </a>
+        </div>
+    </div>
+
+    <div class="card p-4">
+        <h2 class="h5 mb-3">Recent Orders (@Model.Count())</h2>
+
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info text-center" role="alert">
+                <i class="bi bi-info-circle"></i> No orders found in the system. Start by placing a new order!
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover table-borderless table-order">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>@Html.DisplayNameFor(model => model.CustomerName)</th>
+                            <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+                            <th>@Html.DisplayNameFor(model => model.TotalAmount)</th>
+                            <th>Order ID (PK/RK)</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.ProductPhotoUrl))
+                                    {
+                                        <img src="@item.ProductPhotoUrl" alt="Product Photo" class="img-fluid" onerror="this.onerror=null;this.src='https://placehold.co/60x60/cccccc/333333?text=N/A';">
+                                    }
+                                    else
+                                    {
+                                        <img src="https://placehold.co/60x60/cccccc/333333?text=N/A" alt="No Photo" class="img-fluid">
+                                    }
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.CustomerName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                                <td>@item.TotalAmount.ToString("C")</td>
+                                <td>@item.PartitionKey / @item.RowKey</td>
+                                <td>
+                                    @* Link to Delete action. We pass the blob URL to help the Delete function clean up the storage. *@
+                                    <a asp-action="Delete" asp-route-partitionKey="@item.PartitionKey" asp-route-rowKey="@item.RowKey" asp-route-blobName="@item.ProductPhotoUrl" class="btn btn-danger btn-action btn-sm">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>

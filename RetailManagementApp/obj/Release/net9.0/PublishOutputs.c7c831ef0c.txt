@@ -1,0 +1,17 @@
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.exe
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\appsettings.json
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.deps.json
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.runtimeconfig.json
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.pdb
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Core.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Data.Tables.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Blobs.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Common.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Files.Shares.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Queues.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\System.ClientModel.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\System.IO.Hashing.dll
+C:\Sheldons Uni work\COMPUTER SCIENCE\YEAR 2\CLDV6212\CLDV6212 POE Part 1\cldv6212-part-1-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\System.Memory.Data.dll

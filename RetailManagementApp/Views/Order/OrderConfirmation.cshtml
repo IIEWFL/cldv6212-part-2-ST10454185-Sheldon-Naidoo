@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Order Confirmed";
+}
+
+<div style="max-width: 600px; margin: 48px auto; padding: 32px; background-color: #f7f9fb; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); text-align: center;">
+    <h2 style="font-size: 28px; font-weight: bold; color: #333333; margin-bottom: 24px;">Order Confirmed!</h2>
+
+    <div style="background-color: #d4edda; border-color: #c3e6cb; color: #155724; padding: 24px; border-radius: 12px; margin-bottom: 24px; text-align: left;">
+        <p style="font-size: 18px; margin-bottom: 12px; line-height: 1.5;">
+            Thank you, <strong style="color: #0c4217;">@ViewBag.CustomerName</strong>, for your purchase!
+        </p>
+        <p style="font-size: 18px; line-height: 1.5;">
+            Your order for <strong style="color: #0c4217;">@ViewBag.ProductName</strong>, totaling <strong style="color: #0c4217;">@ViewBag.TotalAmount</strong>, has been successfully placed.
+        </p>
+    </div>
+
+    <div>
+        <a asp-action="Index" asp-controller="Product" style="display: inline-block; padding: 12px 24px; background-color: #4c8bf5; color: #ffffff; border-radius: 20px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);">
+            Back to Product List
+        </a>
+    </div>
+</div>

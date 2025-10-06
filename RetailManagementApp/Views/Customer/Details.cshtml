@@ -1,0 +1,36 @@
+﻿@model RetailManagementApp.Models.Customer
+
+@{
+    ViewData["Title"] = "Customer Details";
+}
+
+<div style="max-width: 1000px; margin: 32px auto; padding: 32px; background-color: #f7f9fb; min-height: 100vh;">
+    <div style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); padding: 32px;">
+        <h1 style="font-size: 28px; font-weight: bold; color: #333333; margin-bottom: 8px; text-align: center;">Customer Details</h1>
+        <h4 style="font-size: 16px; font-weight: normal; color: #5a5a5a; text-align: center; margin-bottom: 24px;">View detailed information for this customer</h4>
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin-bottom: 24px;" />
+
+        <div style="max-width: 600px; margin: 0 auto; background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 24px; text-align: left;">
+            <dl style="display: grid; grid-template-columns: 1fr 2fr; gap: 16px;">
+                <dt style="font-weight: 600; color: #4a5568;">
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </dt>
+                <dd style="color: #4a5568;">
+                    @Html.DisplayFor(model => model.CustomerName)
+                </dd>
+
+                <dt style="font-weight: 600; color: #4a5568;">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd style="color: #4a5568;">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+            </dl>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px; display: flex; justify-content: center; gap: 16px;">
+            <a asp-action="Edit" asp-route-partitionKey="@Model.PartitionKey" asp-route-rowKey="@Model.RowKey" style="display: inline-block; padding: 12px 24px; background-color: #4c8bf5; color: #ffffff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#3e7ae1'" onmouseout="this.style.backgroundColor='#4c8bf5'">Edit</a>
+            <a asp-action="Index" style="display: inline-block; padding: 12px 24px; background-color: #e2e8f0; color: #4a5568; text-decoration: none; border-radius: 8px; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#cbd5e0'" onmouseout="this.style.backgroundColor='#e2e8f0'">Back to List</a>
+        </div>
+    </div>
+</div>

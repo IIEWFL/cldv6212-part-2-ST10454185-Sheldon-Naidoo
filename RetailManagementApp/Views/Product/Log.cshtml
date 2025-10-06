@@ -1,0 +1,32 @@
+﻿@model IEnumerable<RetailManagementApp.Models.QueueLogViewModel>
+
+@{
+    ViewData["Title"] = "Queue Messages";
+}
+
+<h1>Queue Messages</h1>
+<p>This page displays a log of messages currently in the queue.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Message ID</th>
+            <th>Insertion Time</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var log in Model)
+        {
+            <tr>
+                <td>@log.Id</td>
+                <td>@log.QueueTime</td>
+                <td>@log.MessageText</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-action="Index" method="get">
+    <button type="submit" class="btn btn-secondary">Refresh Log</button>
+</form>

@@ -1,0 +1,53 @@
+﻿@model RetailManagementApp.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<div style="max-width: 1000px; margin: 32px auto; padding: 32px; background-color: #f7f9fb; min-height: 100vh;">
+    <div style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); padding: 32px;">
+        <h1 style="font-size: 28px; font-weight: bold; color: #333333; margin-bottom: 8px; text-align: center;">Create Product</h1>
+        <h4 style="font-size: 16px; font-weight: normal; color: #5a5a5a; text-align: center; margin-bottom: 24px;">Add a new product to your inventory</h4>
+        <hr style="border: none; border-top: 1px solid #e2e8f0; margin-bottom: 24px;" />
+
+        <div style="max-width: 600px; margin: 0 auto;">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" style="color: #e53e3e; margin-bottom: 16px;"></div>
+
+                <div style="margin-bottom: 24px;">
+                    <label for="image" style="display: block; font-weight: 600; color: #4a5568; margin-bottom: 8px;">Product Image</label>
+                    <input type="file" name="image" id="image" style="display: block; width: 100%; padding: 10px; font-size: 16px; border: 1px solid #cbd5e0; border-radius: 8px; box-sizing: border-box;" />
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label asp-for="ProductName" style="display: block; font-weight: 600; color: #4a5568; margin-bottom: 8px;">Product Name</label>
+                    <input asp-for="ProductName" style="display: block; width: 100%; padding: 10px; font-size: 16px; border: 1px solid #cbd5e0; border-radius: 8px; box-sizing: border-box;" />
+                    <span asp-validation-for="ProductName" style="color: #e53e3e; font-size: 12px;"></span>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label asp-for="Price" style="display: block; font-weight: 600; color: #4a5568; margin-bottom: 8px;"></label>
+                    <input asp-for="Price" style="display: block; width: 100%; padding: 10px; font-size: 16px; border: 1px solid #cbd5e0; border-radius: 8px; box-sizing: border-box;" />
+                    <span asp-validation-for="Price" style="color: #e53e3e; font-size: 12px;"></span>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <label asp-for="Quantity" style="display: block; font-weight: 600; color: #4a5568; margin-bottom: 8px;"></label>
+                    <input asp-for="Quantity" style="display: block; width: 100%; padding: 10px; font-size: 16px; border: 1px solid #cbd5e0; border-radius: 8px; box-sizing: border-box;" />
+                    <span asp-validation-for="Quantity" style="color: #e53e3e; font-size: 12px;"></span>
+                </div>
+
+                <div style="text-align: center; display: flex; justify-content: center; gap: 16px; margin-top: 32px;">
+                    <input type="submit" value="Create" style="background-color: #4c8bf5; color: #ffffff; font-weight: bold; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#3e7ae1'" onmouseout="this.style.backgroundColor='#4c8bf5'" />
+                    <a asp-action="Index" style="display: inline-block; padding: 12px 24px; background-color: #e2e8f0; color: #4a5568; text-decoration: none; border-radius: 8px; transition: background-color 0.2s ease;" onmouseover="this.style.backgroundColor='#cbd5e0'" onmouseout="this.style.backgroundColor='#e2e8f0'">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
