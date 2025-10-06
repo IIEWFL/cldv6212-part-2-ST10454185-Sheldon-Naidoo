@@ -1,0 +1,17 @@
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.exe
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\appsettings.Development.json
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\appsettings.json
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.deps.json
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.runtimeconfig.json
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\RetailManagementApp.pdb
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Core.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Data.Tables.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Blobs.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Common.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Files.Shares.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Azure.Storage.Queues.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\System.ClientModel.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\System.IO.Hashing.dll
+C:\ST10454185_CLDV6212_POE_Part2\cldv6212-part-2-ST10454185-Sheldon-Naidoo\RetailManagementApp\obj\Release\net9.0\PubTmp\Out\System.Memory.Data.dll

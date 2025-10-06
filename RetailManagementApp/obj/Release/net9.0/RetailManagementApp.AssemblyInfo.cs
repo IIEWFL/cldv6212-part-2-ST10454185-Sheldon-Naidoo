@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RetailManagementApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+988c386c74e56f2ab5fb75400b557e48586a277d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e0e3600d0ae773747281d0733c0a185945e3a0f")]
 [assembly: System.Reflection.AssemblyProductAttribute("RetailManagementApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RetailManagementApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

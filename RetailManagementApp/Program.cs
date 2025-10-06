@@ -17,7 +17,7 @@ namespace RetailManagementApp
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            var storageConnectionString = builder.Configuration.GetConnectionString("StorageConnectionString")
+            var storageConnectionString = builder.Configuration.GetConnectionString("storageConnectionString")
                 ?? throw new InvalidOperationException("Storage connection string is missing");
 
             builder.Services.AddSingleton(new CustomerTableService(storageConnectionString, "Customers"));
@@ -28,9 +28,14 @@ namespace RetailManagementApp
 
             // --- API CLIENTS (Connect to Function App) ---
 
+            // Determine the base URL based on the environment
+            string functionBaseUrlKey = builder.Environment.IsDevelopment()
+                ? "AzureFunctionBaseURL"          // Use local host URL for development
+                : "AzureFunctionBaseUrlProduction"; // Use deployed URL for production/staging
+
             // The base URL for the Function App is now configured using AddHttpClient
-            var functionBaseUrl = builder.Configuration["AzureFunctionBaseURL"]
-                ?? throw new InvalidOperationException("Azure Functions Base URL (AzureFunctionBaseURL) is missing in configuration.");
+            var functionBaseUrl = builder.Configuration["AzureFunctionBaseUrlProduction"]
+                ?? throw new InvalidOperationException("Azure Functions Base URL is missing in configuration.");
 
             var functionBaseUri = new Uri(functionBaseUrl);
 

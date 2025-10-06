@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="retailms" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Sheldons\ Uni\ work\\COMPUTER\ SCIENCE\\YEAR\ 2\\CLDV6212\\CLDV6212\ POE\ Part\ 1\\cldv6212-part-1-ST10454185-Sheldon-Naidoo\\RetailManagementApp\\obj\\Release\\net9\.0\\PubTmp\\Out\\$" />
+  <parameter name="IIS Web Application Name" description="" value="ST10454185wa" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\ST10454185_CLDV6212_POE_Part2\\cldv6212-part-2-ST10454185-Sheldon-Naidoo\\RetailManagementApp\\obj\\Release\\net9\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>
